@@ -4,14 +4,14 @@ const products = [
     { id: 3, name: "Kuromi Design", price: 25.00, image: "products/kuromi.png" },
     { id: 4, name: "My Melody Design", price: 25.00, image: "products/mymelody.png" },
     { id: 5, name: "Pompompurin Design", price: 25.00, image: "products/pompompurin.png" },
-    { id: 6, name: " ", price: 99.00, image: "products/.png" },
-    { id: 7, name: " ", price: 99.00, image: "products/.png" },
-    { id: 8, name: " ", price: 99.00, image: "products/.png" },
-    { id: 9, name: " ", price: 99.00, image: "products/.png" },
-    { id: 10, name: " ", price: 99.00, image: "products/.png" },
-    { id: 11, name: " ", price: 99.00, image: "products/.png" },
-    { id: 12, name: " ", price: 99.00, image: "products/.png" },
-    { id: 13, name: " ", price: 99.00, image: "products/.png" },
+    { id: 6, name: "Tulip Design ", price: 99.00, image: "products/.png" },
+    { id: 7, name: "Tulip Design v2 ", price: 99.00, image: "products/.png" },
+    { id: 8, name: "Cake Design ", price: 20.00, image: "products/.png" },
+    { id: 9, name: "Pup Design ", price: 20.00, image: "products/.png" },
+    { id: 10, name: "Lily Design ", price: 25.00, image: "products/.png" },
+    { id: 11, name: "Personalized Initials ", price: 30.00, image: "products/.png" },
+    { id: 12, name: "Personalized Pen ", price: 35.00, image: "products/.png" },
+    { id: 13, name: "Personalized Mirror ", price: 50.00, image: "products/.png" },
 
 ];
 
