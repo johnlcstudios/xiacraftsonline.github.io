@@ -28,7 +28,15 @@ header {
     justify-content: center;
     padding: 20px;
     margin-top: 20px;
-    margin-left: 70px;
+    margin-left: 5%; /* Changed from fixed margin to relative */
+    margin-right: 5%; /* Added right margin for better spacing */
+}
+
+@media (max-width: 768px) {
+    #product-list {
+        margin-left: 0; /* Remove left margin on smaller screens */
+        margin-right: 0; /* Remove right margin on smaller screens */
+    }
 }
 
 .product {
@@ -37,14 +45,15 @@ header {
     border-radius: 12px;
     margin: 10px;
     padding: 15px;
-    width: 200px;
+    width: 100%; /* Changed from fixed width to 100% for responsiveness */
+    max-width: 200px; /* Added max-width to maintain size on larger screens */
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .product img {
-    width: 70px; 
-    height: 70px;
+    width: 100%; /* Changed to 100% for responsive images */
+    height: auto; /* Set height to auto to maintain aspect ratio */
 }
 
 .product:hover {
@@ -62,8 +71,7 @@ footer {
     padding: 10px 0;
     background: #f8f8f8;
     color: #333333;
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Changed from fixed to relative for better layout */
     width: 100%;
     margin-top: 0;
 }
