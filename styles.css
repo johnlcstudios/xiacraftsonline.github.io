@@ -1,11 +1,36 @@
 body {
-    overflow-x: auto; /* Enable horizontal scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
 }
 
-#recommended-products {
-    display: flex; /* Use flexbox for horizontal layout */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    padding: 10px; /* Optional: Add some padding */
+.dark-mode {
+    background-color: #333333; 
+    color: #ffffff; 
+}
+
+h2{
+    font-size: 24px;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    background: #f8f8f8;
+    color: #333333;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+main {
+    margin-bottom: 80px;
 }
 
 #product-list {
@@ -15,36 +40,6 @@ body {
     padding: 20px;
     margin-top: 20px;
     margin-left: 70px;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.options {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.searchP {
-    margin-left: 40px;
-}
-
-#search-input {
-    padding: 10px; /* Add padding for better appearance */
-    border: 1px solid #d0d0d0; /* Add border */
-    border-radius: 5px; /* Rounded corners */
-    margin: 10px 0; /* Add margin for spacing */
-    font-size: 16px; /* Increase font size */
-    color: #333; /* Text color */
-}
-
-#sort-options {
-    align-content: center;
-    display: flex;
-    justify-content: center;
 }
 
 .product {
@@ -68,27 +63,9 @@ h2 {
     transform: translateY(-2px);
 }
 
-.dark-mode {
-    background-color: #333333; 
-    color: #ffffff; 
-}
-
 .dark-mode .product {
     border: 2px solid purple;
     box-shadow: 0 0 10px purple;
-}
-
-header {
-    background: #f8f8f8;
-    color: #333333;
-    padding: 5px 0;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-main {
-    margin-bottom: 80px;
 }
 
 footer {
@@ -103,6 +80,10 @@ footer {
 }
 
 #checkout-button {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%); 
     background-color: #007aff; 
     border: none;
     border-radius: 10px;
@@ -110,15 +91,6 @@ footer {
     font-size: 16px;
     padding: 12px 24px; 
     transition: background-color 0.3s; 
-}
-
-#sort-options {
-    padding: 10px; /* Add padding for better appearance */
-    border: 1px solid #d0d0d0; /* Add border */
-    border-radius: 5px; /* Rounded corners */
-    margin: 10px 0; /* Add margin for spacing */
-    font-size: 16px; /* Increase font size */
-    color: #333; /* Text color */
 }
 
 .select-button {
@@ -140,53 +112,9 @@ footer {
     background-color: #0051a8; 
 }
 
-/* Navigation Styles */
-nav {
-    background-color: #f0f0f0; /* Light background for navigation */
-    padding: 10px 20px; /* Padding around the navigation */
-}
-
-nav ul {
-    list-style-type: none; /* Remove default list styles */
-    padding: 0; /* Remove padding */
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: center; /* Center the navigation items */
-}
-
-nav li {
-    margin-right: 20px; /* Space between navigation items */
-}
-
-nav a {
-    text-decoration: none; /* Remove underline from links */
-    color: #007aff; /* Link color */
-    font-weight: bold; /* Bold text for links */
-}
-
-nav a:hover {
-    color: #0051a8; /* Darker color on hover */
-}
-
-/* Collapsible Navigation Styles */
-#nav-toggle {
-    display: none; /* Hide toggle button by default */
-}
-
-@media (max-width: 768px) {
-    #nav-links {
-        display: none; /* Hide navigation links by default on small screens */
-        flex-direction: column; /* Stack links vertically */
-    }
-
-    #nav-toggle {
-        display: block; /* Show toggle button on small screens */
-        background: none;
-        border: none;
-        font-size: 24px; /* Increase font size for visibility */
-        cursor: pointer; /* Change cursor to pointer */
-    }
-
-    #nav-links.active {
-        display: flex; /* Show navigation links when active */
-    }
+#recommended-products {
+    display: flex; /* Added to make the list horizontal */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    justify-content: center; /* Center the items */
+    padding: 20px; /* Add padding for spacing */
 }
