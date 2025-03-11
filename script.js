@@ -4,23 +4,7 @@ const products = [
     { id: 3, name: "Kuromi Design", price: 25.00, image: "products/kuromi.png" },
     { id: 4, name: "My Melody Design", price: 25.00, image: "products/mymelody.png" },
     { id: 5, name: "Pompompurin Design", price: 25.00, image: "products/pompompurin.png" },
-    { id: 6, name: "Tulip Design ", price: 20.00, image: "products/.png" },
-    { id: 7, name: "Tulip Design v2 ", price: 25.00, image: "products/.png" },
-    { id: 8, name: "Cake Design ", price: 20.00, image: "products/.png" },
-    { id: 9, name: "Pup Design ", price: 20.00, image: "products/.png" },
-    { id: 10, name: "Lily Design ", price: 25.00, image: "products/.png" },
-    { id: 11, name: "Personalized Initials ", price: 30.00, image: "products/.png" },
-    { id: 12, name: "Personalized Pen ", price: 35.00, image: "products/.png" },
-    { id: 13, name: "Personalized Mirror ", price: 50.00, image: "products/.png" },
-
 ];
-
-
-
-
-
-
-
 
 let selectedProducts = [];
 
@@ -32,9 +16,9 @@ function displayProducts() {
         productDiv.innerHTML = `
             <img src="${product.image}" alt="${product.name}" />
             <h2>${product.name}</h2>
-            <p>Price: ₱${(product.price).toFixed(2)}</p>
+            <p>Price: $${product.price.toFixed(2)}</p>
             <button class="select-button" onclick="toggleSelection(${product.id})">Select</button>
-            <span class="checkmark" id="checkmark-${product.id}" style="display: none;">✔️</span>
+        <span class="checkmark" id="checkmark-${product.id}" style="display: none;">✔️</span>
         `;
         productList.appendChild(productDiv);
     });
