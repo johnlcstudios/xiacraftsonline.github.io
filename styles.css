@@ -81,7 +81,7 @@ h2 {
 header {
     background: #f8f8f8;
     color: #333333;
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -138,4 +138,55 @@ footer {
 
 #checkout-button:hover {
     background-color: #0051a8; 
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #f0f0f0; /* Light background for navigation */
+    padding: 10px 20px; /* Padding around the navigation */
+}
+
+nav ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the navigation items */
+}
+
+nav li {
+    margin-right: 20px; /* Space between navigation items */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007aff; /* Link color */
+    font-weight: bold; /* Bold text for links */
+}
+
+nav a:hover {
+    color: #0051a8; /* Darker color on hover */
+}
+
+/* Collapsible Navigation Styles */
+#nav-toggle {
+    display: none; /* Hide toggle button by default */
+}
+
+@media (max-width: 768px) {
+    #nav-links {
+        display: none; /* Hide navigation links by default on small screens */
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    #nav-toggle {
+        display: block; /* Show toggle button on small screens */
+        background: none;
+        border: none;
+        font-size: 24px; /* Increase font size for visibility */
+        cursor: pointer; /* Change cursor to pointer */
+    }
+
+    #nav-links.active {
+        display: flex; /* Show navigation links when active */
+    }
 }
