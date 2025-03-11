@@ -40,7 +40,7 @@ function displayProducts() {
         productDiv.innerHTML = `
             <img src="${product.image}" alt="${product.name}" />
             <h2>${product.name}</h2>
-            <p>Price: $${product.price.toFixed(2)}</p>
+            <p>Price: ₱${product.price.toFixed(2)}</p>
             <button class="select-button" onclick="toggleSelection(${product.id})">Select</button>
         <span class="checkmark" id="checkmark-${product.id}" style="display: none;">✔️</span>
         `;
