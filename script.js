@@ -19,17 +19,6 @@ const products = [
     { id: 18, name: "Pup Design", price: 20.00, image: "products/pup.png" },
 ];
 
-
-
-
-
-
-
-
-
-
-
-
 const recommendedProducts = [
     products[0], // Cinnamorol Design
     products[1], // Hello Kitty Design
@@ -38,6 +27,22 @@ const recommendedProducts = [
     products[13],
     products[14],
 ];
+
+// Search and Sort Functions
+function searchProducts(query) {
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
+    displayProducts(filteredProducts);
+}
+
+function sortProducts(criteria) {
+    const sortedProducts = [...products];
+    if (criteria === 'name') {
+        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (criteria === 'price') {
+        sortedProducts.sort((a, b) => a.price - b.price);
+    }
+    displayProducts(sortedProducts);
+}
 
 let selectedProducts = [];
 
@@ -55,9 +60,10 @@ function displayRecommendedProducts() {
     });
 }
 
-function displayProducts() {
+function displayProducts(productsToDisplay) {
     const productList = document.getElementById('product-list');
-    products.forEach(product => {
+    productList.innerHTML = ''; // Clear existing products
+    productsToDisplay.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';
         productDiv.innerHTML = `
@@ -65,7 +71,7 @@ function displayProducts() {
             <h2>${product.name}</h2>
             <p>Price: ₱${product.price.toFixed(2)}</p>
             <button class="select-button" onclick="toggleSelection(${product.id})">Select</button>
-        <span class="checkmark" id="checkmark-${product.id}" style="display: none;">✔️</span>
+            <span class="checkmark" id="checkmark-${product.id}" style="display: none;">✔️</span>
         `;
         productList.appendChild(productDiv);
     });
@@ -91,6 +97,37 @@ document.getElementById('checkout-button').addEventListener('click', function() 
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    displayProducts();
+    displayProducts(products);
     displayRecommendedProducts();
+
+    document.getElementById('search-input').addEventListener('input', function() {
+        searchProducts(this.value);
+    });
+
+    document.getElementById('sort-select').addEventListener('change', function() {
+        sortProducts(this.value);
+    });
+});
+
+function searchProducts(query) {
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
+    displayProducts(filteredProducts);
+}
+
+function sortProducts(criteria) {
+    const sortedProducts = [...products];
+    if (criteria === 'name') {
+        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (criteria === 'price') {
+        sortedProducts.sort((a, b) => a.price - b.price);
+    }
+    displayProducts(sortedProducts);
+}
+
+document.getElementById('search-input').addEventListener('input', function() {
+    searchProducts(this.value);
+});
+
+document.getElementById('sort-select').addEventListener('change', function() {
+    sortProducts(this.value);
 });

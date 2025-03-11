@@ -13,12 +13,19 @@
         <!-- <button id="dark-mode-toggle">Toggle Dark Mode</button>  -->
     </header>
     <main>
+        <hr><br>
         <section id="recommended-list">
             <h2>Recommended Products</h2>
             <div id="recommended-products"></div>
         </section>
         <br><hr><br>
         <h2>Products</h2>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <select id="sort-select">
+            <option value="">Sort by</option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+        </select>
         <section id="product-list">
         </section>
         <button id="checkout-button" style="display: none;">Proceed to Checkout</button>

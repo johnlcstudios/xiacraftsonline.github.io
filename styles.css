@@ -118,3 +118,33 @@ footer {
     justify-content: center; /* Center the items */
     padding: 20px; /* Add padding for spacing */
 }
+
+#search-input {
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #007aff;
+}
+
+#sort-select {
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s;
+}
+
+#sort-select:hover {
+    background-color: #f0f0f0;
+}
