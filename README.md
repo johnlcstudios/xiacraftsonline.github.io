@@ -21,6 +21,9 @@ To run this project locally, follow these steps:
    ```
 3. Open `index.html` in your web browser.
 
+## Adding Products
+Adding Products to the shop can be achieved by simply adding an entry to the products list on script.js file
+
 ## Usage
 - Browse through the product listings.
 - Click on the "Select" button to choose products.
