@@ -72,10 +72,6 @@ footer {
     margin-top: 0;
 }
 
-a {
-    color: #333;
-}
-
 #checkout-button {
     position: fixed;
     bottom: 90px;
