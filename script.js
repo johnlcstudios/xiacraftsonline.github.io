@@ -19,33 +19,63 @@ const products = [
     { id: 18, name: "Pup Design", price: 20.00, image: "products/pup.png" },
 ];
 
+const recommendedProducts = [
+    { id: 1, name: "Cinnamorol Design", price: 25.00, image: "products/cinnamorol.png" },
+    { id: 2, name: "Hello Kitty Design", price: 25.00, image: "products/hellokitty.png" },
+    { id: 3, name: "Kuromi Design", price: 25.00, image: "products/kuromi.png" },
+    { id: 11, name: "Ribbon Design", price: 15.00, image: "products/ribbon.png" },
+    { id: 12, name: "Tulip Design", price: 20.00, image: "products/tulip.png" },
+    { id: 13, name: "Tulip v2 Design", price: 25.00, image: "products/tulipv2.png" },
+];
 
-
-
-
-
-
-
-
-
-
+function displayRecommendedProducts() {
+    const recommendedList = document.getElementById('recommended-products');
+    recommendedList.innerHTML = ''; // Clear existing recommended products
+    recommendedProducts.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Price: ₱${product.price.toFixed(2)}</p>
+            <img src="${product.image}" alt="${product.name}" />
+        `;
+        recommendedList.appendChild(productDiv);
+    });
+}
 
 let selectedProducts = [];
 
-function displayProducts() {
+function displayProducts(filteredProducts) {
     const productList = document.getElementById('product-list');
-    products.forEach(product => {
+    productList.innerHTML = '';
+    (filteredProducts || products).forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';
         productDiv.innerHTML = `
             <img src="${product.image}" alt="${product.name}" />
             <h2>${product.name}</h2>
             <p>Price: ₱${product.price.toFixed(2)}</p>
-            <button class="select-button" onclick="toggleSelection(${product.id})">Select</button>
-        <span class="checkmark" id="checkmark-${product.id}" style="display: none;">✔️</span>
+            <button class="select-button" onclick="toggleSelection(${product.id})">Add to Orders</button>
+            <span class="checkmark" id="checkmark-${product.id}" style="display: none;">✔️</span>
         `;
         productList.appendChild(productDiv);
     });
+}
+
+function searchProducts() {
+    const searchInput = document.getElementById('search-input').value.toLowerCase();
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchInput));
+    displayProducts(filteredProducts);
+}
+
+function sortProducts() {
+    const sortOption = document.getElementById('sort-options').value;
+    if (sortOption === 'name') {
+        products.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortOption === 'price') {
+        products.sort((a, b) => a.price - b.price);
+    }
+    displayProducts();
 }
 
 function toggleSelection(productId) {
@@ -67,4 +97,7 @@ document.getElementById('checkout-button').addEventListener('click', function() 
     window.location.href = url;
 });
 
-document.addEventListener('DOMContentLoaded', displayProducts);
+document.addEventListener('DOMContentLoaded', function() {
+    displayProducts();
+    displayRecommendedProducts();
+});
