@@ -14,6 +14,9 @@ const products = [
     { id: 13, name: "Tulip v2 Design", price: 25.00, image: "products/.png" },
     { id: 14, name: "Cherry Design", price: 20.00, image: "products/.png" },
     { id: 15, name: "Lollipop Design", price: 25.00, image: "products/.png" },
+    { id: 16, name: "Ice Cream Design", price: 35.00, image: "products/.png" },
+    { id: 17, name: "Daisy Flower Design", price: 20.00, image: "products/.png" },
+    { id: 18, name: "Pup Design", price: 20.00, image: "products/.png" },
 ];
 
 
